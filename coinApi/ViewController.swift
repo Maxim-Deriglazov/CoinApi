@@ -45,7 +45,6 @@ class ViewController: UIViewController {
             if let error = error {
                 self.actInd?.isHidden = true                
                 self.errorView?.isHidden = false
-                self.errorLabel?.isHidden = false
                 self.errorLabel?.text = error.localizedDescription
             } else {
                 self.actInd?.isHidden = true
@@ -69,6 +68,11 @@ class ViewController: UIViewController {
             rateLabel?.text = String(format: "%.3f", Double(rateFloat))
         }
     }
+    
+    @IBAction func closeErrorButton(_ sender: UIButton) {
+        errorView?.isHidden = true
+    }
+    
 }
 
 

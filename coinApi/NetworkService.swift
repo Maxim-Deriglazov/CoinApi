@@ -53,8 +53,6 @@ class NetworkService: NSObject {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 rate = try? decoder.decode(Exchangerate.self, from: data)
             }
-            
-            
             DispatchQueue.main.async { completion?(error, rate) }
         }
         task.resume()
